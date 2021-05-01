@@ -42,6 +42,7 @@ int main()
     recoger=problema4(caden);
     cout<<recoger<<endl;
     */
+   problema14();
 }
 
 
@@ -195,6 +196,42 @@ void problema8(char *c1, char *c2)
         cout<<"Texto: "<<c1;cout<<" Numero: "<<c2<<endl;
 }
 
+long long int problema9(char *c, long long int n)
+{
+     long int convercion=0,suma=0,contador,numero=0;
+    for( contador=0; '\0'!=c[contador];contador++ ){}
+
+
+    for(int i=0;i<(contador-((contador/n)*n));i++)
+    {
+        numero=0;
+        for(int e=0;e<=n-(contador-((contador/n)*n));e++,i++)
+        {
+            convercion=potencia(10,(contador-((contador/n)*n))-e);
+            convercion=convercion*(int(c[i])-48);
+            numero+=convercion;
+        }
+        suma+=numero;
+        convercion=i;
+        break;
+    }
+
+
+
+    for(int i=convercion;i<contador;i++)
+    {   numero=0;
+        for(int e=0;e<n;e++,i++)
+        {
+        convercion=potencia(10,n-e);
+        convercion=convercion*(int(c[i])-48);
+        numero+=convercion;
+        }
+        suma+=numero;
+        i--;
+    }
+
+    return suma;
+}
 
 
 long long problema10(char *c)
@@ -227,17 +264,6 @@ long long problema10(char *c)
 
 
 
-
-bool problema12(int *mat, int elementos)
-{
-
-
-
-}
-
-
-
-
 int problema13(int *mat)
 {
     int estr=0, matriz[6][8];
@@ -254,74 +280,29 @@ int problema13(int *mat)
         return estr;
 }
 
-void problema14()
-{
-    int k=0;
-      int numeros[100][100];
-      while(k<25){
-        for(int i=0;i<5;i++){
-          for(int j=0;j<5;j++){
-            //cout<<" numero ["<<i<<"]["<<j<<"]: "<<k<<endl;
-              k++;
-              numeros[i][j]=k;
-          }
-        }
-      }
-        cout<<"\nMostrando matriz a 0 grados\n\n";
-        for(int i=0;i<5;i++){
-            for(int j=0;j<5;j++){
-              cout<<numeros[i][j]<<" ";
-            }
-            cout<<"\n";
-        }
-      /*---------------------*/
-        cout<<"\nMostrando matriz a 90 grados\n\n";
-        for(int i=0;i<=4;i++){
-          for(int j=4;j>=0;j--){
-            cout<<numeros[j][i]<<" ";
-          }
-          cout<<"\n";
-        }
-
-       /*---------------------*/
-      cout<<"\nMostrando matriz rotada 180 grados\n\n";
-      for(int i=4;i>=0;i--){
-        for(int j=4;j>=0;j--){
-          cout<<numeros[i][j]<<" ";
-        }
-        cout<<"\n";
-      }
-       /*---------------------*/
-      cout<<"\nMostrando matriz rotada 270 grados\n\n";
-      for(int i=4;i>=0;i--){
-        for(int j=0;j<5;j++){
-          cout<<numeros[j][i]<<" ";
-        }
-        cout<<"\n";
-      }
-        cout<<endl;
-}
-
-
-int problema16(int n)
-{
-    int caminos;
-    caminos=recursiva(0,0,n+1,0);
-    return caminos;
-}
 
 
 
-int problema17(int num)
-{
-    int suma=0;
-    for(;num>1;num--){
-        if(amigable(num)){
-            suma+=num;
-        }
-    }
-    return suma;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
