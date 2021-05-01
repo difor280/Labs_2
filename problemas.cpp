@@ -9,14 +9,15 @@ using namespace std;
 //Ejercicio5: https://www.tinkercad.com/things/02bFcL2rLRb
 //Problema 1: https: https://www.tinkercad.com/things/7UgTq5vOdAP
 //Problema 17: https:https://www.tinkercad.com/things/7ypGLzHgZkD
+//Problema 10: https://www.tinkercad.com/things/9Z05dPmjU6K
 
-//bool problema3(char *,char *);
+
 
 int main()
 {
     bool retorno ;
     char hola[]={"hola"};
-    char hole[]={"hola  "};
+    char hole[]={"hola "};
     retorno=problema3(hola,hole);
     cout<<retorno<< endl;
 
@@ -143,23 +144,26 @@ char *problema6(char *c)
 
 void problema7(char *c)
 {
-    int longitud=0,i,j=0,k,cont,z=0;
+    int longitud,j=0,cont,z=0;
       char  auxiliar[30],final[30],temp;
 
-      while(c[longitud]!=0){
-        longitud++;
-      }
-      for(i=0;i<longitud;i++){
+      for(longitud=0;c[longitud]!=0;longitud++){}
+      
+      for(int i=0;i<longitud;i++)
+      {
         cont=0;
         temp=c[i];
         auxiliar[j]=temp;
         j++;
-        for(k=0;k<longitud;k++){
-          if(auxiliar[k]==temp){
+        for(int k=0;k<longitud;k++)
+        {
+          if(auxiliar[k]==temp)
+          {
             cont++;
           }
         }
-        if(cont==1){
+        if(cont==1)
+        {
           final[z]=temp;
           z++;
         }
@@ -224,11 +228,13 @@ long long problema10(char *c)
 
 
 
-/*bool problema12(int *mat, int elementos)
+bool problema12(int *mat, int elementos)
 {
 
+
+
 }
-*/
+
 
 
 

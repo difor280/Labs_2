@@ -1,5 +1,14 @@
 #include "auxiliar.h"
 
+void fun_c(double *a, int n ,double *promedio, double *suma)
+{
+    *suma = 0;
+    for (int i =0; i <n; ++i){
+        *suma += *(a+i);
+        *promedio = *suma / double(n);
+    }
+}
+
 int deshacer(int *unidades, int *numero)
 {
     {
@@ -7,7 +16,7 @@ int deshacer(int *unidades, int *numero)
          *unidades=0;
             while (true)
             {
-                *unidades=*unidades +1;
+                *unidades+= 1;
                 if(*numero/decimal == 0)
                 {
                     break;

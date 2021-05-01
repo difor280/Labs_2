@@ -11,4 +11,7 @@
  long long int potencia(long int , int );
 
 long long int factorial(int n);
+
+void fun_c(double *a, int n ,double *promedio, double *suma);
+
 #endif // AUXILIAR_H
